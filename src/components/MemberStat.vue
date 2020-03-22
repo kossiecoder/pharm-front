@@ -42,9 +42,6 @@
                         if (this.currentYear === null) {
                             this.currentYear = item[0]._view.label;
                             this.getStat(item[0]._view.label);
-                        } else {
-                            this.currentYear = null;
-                            this.getStat();
                         }
                     },
                     scales: {
