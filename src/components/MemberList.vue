@@ -11,7 +11,7 @@
                         v-model="filter.firstName"
                         class="mb-2"
                         placeholder="Filter by First Name"
-                        @keyup.enter="getMembers"
+                        @keyup.enter="getMembers()"
                     ></b-input>
                 </b-col>
                 <b-col
@@ -22,7 +22,7 @@
                         v-model="filter.surname"
                         class="mb-2"
                         placeholder="Filter by Surname"
-                        @keyup.enter="getMembers"
+                        @keyup.enter="getMembers()"
                     ></b-input>
                 </b-col>
                 <b-col
@@ -33,7 +33,7 @@
                         v-model="filter.email"
                         class="mb-2"
                         placeholder="Filter by Email"
-                        @keyup.enter="getMembers"
+                        @keyup.enter="getMembers()"
                     ></b-input>
                 </b-col>
                 <b-col
@@ -41,7 +41,7 @@
                     md="3"
                 >
                     <b-button
-                        @click="getMembers"
+                        @click="getMembers()"
                         class="w-100"
                         variant="primary"
                     >Filter</b-button>
@@ -66,17 +66,17 @@
         </template>
 
 
-<!--        <LoadingSpinner v-else />-->
+        <LoadingSpinner v-else />
     </b-container>
 </template>
 
 <script>
     import axios from "axios";
-    // import LoadingSpinner from "./LoadingSpinner";
+    import LoadingSpinner from "./LoadingSpinner";
 
     export default {
         components: {
-            // LoadingSpinner
+            LoadingSpinner
         },
         data() {
             return {
@@ -90,7 +90,7 @@
             }
         },
         async created() {
-            await this.getMembers()
+            await this.getMembers();
             this.loading = false;
         },
         methods: {
